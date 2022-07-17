@@ -2,6 +2,7 @@ package proyecto_final;
 
 import javax.swing.JOptionPane;
 
+
 public class Menu 
 {
     public static int opcion;
@@ -25,20 +26,16 @@ public class Menu
         
         if (opcion == 1)
         {
-            
-            Clientes clase2 = new Clientes () ;
-        
-            clase2.Datos_Clientes () ;               
-            
+            Clientes cli = new Clientes();
+            cli.registro_Clientes();
+            cli.datos_Clientes();
         }
         
         else if (opcion == 2)
         {
-            
-            Boletos clase3 = new Boletos () ;
-        
-            clase3.Datos_Boleto () ; 
-            
+            Boletos bol = new Boletos();
+            bol.registro_Boletos();
+            bol.datos_Boletos();
         }
         
         else if (opcion == 3)
@@ -63,3 +60,4 @@ public class Menu
     }
                           
 }
+
