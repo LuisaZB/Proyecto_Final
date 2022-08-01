@@ -162,10 +162,6 @@ JOptionPane.showMessageDialog(null, "Por favor complete los datos solicitados a 
         
         //Selección de ruta de la aerolinea
         
-        Aerolinea = JOptionPane.showInputDialog(null, "Skywell" + "\n" + 
-                                                      "Sansa" + "\n" +
-                                                      "Aerobell");
-        
         Selec_aerolinea = Integer.parseInt(JOptionPane.showInputDialog(null,"Aerolíneas disponibles:" + "\n" +
                                                                      "1. Skyway" + "\n" +
                                                                      "2. Sansa" + "\n" +
