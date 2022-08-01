@@ -5,134 +5,190 @@ import javax.swing.JOptionPane;
 public class Boletos {
 
     // Atributos
-    private int selec_vuelo;
-    private String vuelo;
-    private String fecha;
-    private String hora;
-    private int selec_clase;
-    private String clase;
-    private int clase_precio;
-    private int selec_aerolinea;
-    private String aerolinea;
-    private int boletos;
-    private int asientos;
-    private String total;
+    private int Selec_vuelo;
+    private String Vuelo;
+    private String Fecha;
+    private String Hora;
+    private int Selec_clase;
+    private String Clase;
+    private int Clase_precio;
+    private int Selec_aerolinea;
+    private String Aerolinea;
+    private int Boletos;
+    private String Total;
 
     // Metodos Set y Get
     public int getSelec_vuelo() {
-        return selec_vuelo;
+        return Selec_vuelo;
     }
 
     public void setSelec_vuelo(int selec_vuelo) {
-        this.selec_vuelo = selec_vuelo;
+        this.Selec_vuelo = Selec_vuelo;
     }
 
     public String getVuelo() {
-        return vuelo;
+        return Vuelo;
     }
 
-    public void setVuelo(String vuelo) {
-        this.vuelo = vuelo;
+    public void setVuelo(String Vuelo) {
+        this.Vuelo = Vuelo;
     }
 
     public String getFecha() {
-        return fecha;
+        return Fecha;
     }
 
-    public void setFecha(String fecha) {
-        this.fecha = fecha;
+    public void setFecha(String Fecha) {
+        this.Fecha = Fecha;
     }
 
     public String getHora() {
-        return hora;
+        return Hora;
     }
 
-    public void setHora(String hora) {
-        this.hora = hora;
+    public void setHora(String Hora) {
+        this.Hora = Hora;
     }
 
     public int getSelec_clase() {
-        return selec_clase;
+        return Selec_clase;
     }
 
-    public void setSelec_clase(int selec_clase) {
-        this.selec_clase = selec_clase;
+    public void setSelec_clase(int Selec_clase) {
+        this.Selec_clase = Selec_clase;
     }
 
     public String getClase() {
-        return clase;
+        return Clase;
     }
 
-    public void setClase(String clase) {
-        this.clase = clase;
+    public void setClase(String Clase) {
+        this.Clase = Clase;
     }
 
     public int getClase_precio() {
-        return clase_precio;
+        return Clase_precio;
     }
 
-    public void setClase_precio(int clase_precio) {
-        this.clase_precio = clase_precio;
+    public void setClase_precio(int Clase_precio) {
+        this.Clase_precio = Clase_precio;
     }
 
     public int getSelec_aerolinea() {
-        return selec_aerolinea;
+        return Selec_aerolinea;
     }
 
-    public void setSelec_aerolinea(int selec_aerolinea) {
-        this.selec_aerolinea = selec_aerolinea;
+    public void setSelec_aerolinea(int Selec_aerolinea) {
+        this.Selec_aerolinea = Selec_aerolinea;
     }
 
     public String getAerolinea() {
-        return aerolinea;
+        return Aerolinea;
     }
 
     public void setAerolinea(String aerolinea) {
-        this.aerolinea = aerolinea;
+        this.Aerolinea = Aerolinea;
     }
 
     public int getBoletos() {
-        return boletos;
+        return Boletos;
     }
 
-    public void setBoletos(int boletos) {
-        this.boletos = boletos;
-    }
-
-    public int getAsientos() {
-        return asientos;
-    }
-
-    public void setAsientos(int asientos) {
-        this.asientos = asientos;
+    public void setBoletos(int Boletos) {
+        this.Boletos = Boletos;
     }
 
     public String getTotal() {
-        return total;
+        return Total;
     }
 
-    public void setTotal(String total) {
-        this.total = total;
+    public void setTotal(String Total) {
+        this.Total = Total;
     }
 
     public void registro_Boletos() {
-        JOptionPane.showMessageDialog(null, "********** Bienvenido al registro de boletos **********" + "\n\n"
-                + "Por favor complete los datos solicitados a continuación" + "\n");
-
-        vuelo = JOptionPane.showInputDialog(null, "Costa Rica - Tokyo" + "\n" + 
-                                                  "Costa Rica - New York" + "\n" +
-                                                  "Costa Rica - Barcelona");
-        fecha = JOptionPane.showInputDialog(null, "Ingrese la fecha en la que desea hacer su reserva," + "\n" +
-                                                     "formato Dia/Mes/Año: ");
-        hora = JOptionPane.showInputDialog(null, "Digite la hora en la que desea reservar, formato Hora:Minutos: ");
-        clase = JOptionPane.showInputDialog(null, "Primera Clase" + "\n" + 
-                                                  "Clase Ejecutiva" + "\n" +
-                                                  "Clase Economica");
-        aerolinea = JOptionPane.showInputDialog(null, "Skywell" + "\n" + 
+        
+        
+JOptionPane.showMessageDialog(null, "Por favor complete los datos solicitados a continuación"+ "\n" + "para completar la reserva de los boletos", "Bienvenido al modulo de compra de boletos", -1);        
+        
+        //Selección de ruta para el vuelo
+       Selec_vuelo = Integer.parseInt(JOptionPane.showInputDialog(null,"Seleccione el vuelo que desea:" + "\n" +
+                                                                     "1. Costa Rica - Tokyo" + "\n" +
+                                                                     "2. Costa Rica - New York" + "\n" +
+                                                                     "3. Costa Rica - Barcelona"));
+        switch (Selec_vuelo) {
+            case 1:
+                Vuelo = "Costa Rica - Tokyo" ;
+                break;
+            case 2:
+                Vuelo = "Costa Rica - New York" ;
+                break;
+            case 3:
+                Vuelo = "Costa Rica - Barcelona" ;
+                break;
+            default:
+                break;
+        }
+        //Selección de fecha y hora
+        
+        Fecha = JOptionPane.showInputDialog(null, "Ingrese la fecha en la que desea hacer su reserva: " + "\n" +
+                                                     " * formato Dia/Mes/Año * ");
+        Hora = JOptionPane.showInputDialog(null, "Digite la hora en la que desea reservar: " + "\n" +
+                                                     " * Formato Hora:Minutos * ");
+        
+        //Selección de clase
+        
+        Selec_clase = Integer.parseInt(JOptionPane.showInputDialog(null,"Seleccione cual clase desea:" + "\n" +
+                                                                     "1. Primera clase" + "\n" +
+                                                                     "2. Clase ejecutiva" + "\n" +
+                                                                     "3. Clase económica"));
+        
+        switch (Selec_clase) {
+            case 1:           
+                Clase = "Primera clase" ;
+                Clase_precio = 0 ;
+                break;
+            case 2:
+                Clase = "Clase ejecutiva" ; 
+                Clase_precio = 0 ;
+                break;
+            case 3:            
+                Clase = "Clase económica" ;
+                Clase_precio = 0 ;
+                break;
+            default:
+                break;
+        }
+        
+        //Selección de ruta de la aerolinea
+        
+        Aerolinea = JOptionPane.showInputDialog(null, "Skywell" + "\n" + 
                                                       "Sansa" + "\n" +
                                                       "Aerobell");
-        boletos = Integer.parseInt(JOptionPane.showInputDialog("Digite la cantidad de boletos que desea: "));
-        asientos = Integer.parseInt(JOptionPane.showInputDialog("Digite la cantidad de asientos que desea: "));
+        
+        Selec_aerolinea = Integer.parseInt(JOptionPane.showInputDialog(null,"Aerolíneas disponibles:" + "\n" +
+                                                                     "1. Skyway" + "\n" +
+                                                                     "2. Sansa" + "\n" +
+                                                                     "3. Aerobell "));
+        
+        switch (Selec_aerolinea) {
+            case 1:
+                Aerolinea = "Skyway" ;
+                break;
+            case 2:
+                Aerolinea = "Sansa" ;
+                break;
+            case 3:            
+                Aerolinea = "Aerobell " ;
+                break;
+            default:
+                break;
+        }
+            
+        
+        //Selección de boletos
+        
+        Boletos = Integer.parseInt(JOptionPane.showInputDialog("Digite la cantidad de boletos que desea: "));
     }
 
     public void datos_Boletos() {
@@ -142,10 +198,10 @@ public class Boletos {
                 + "Hora: " + getHora() + "\n"
                 + "Clase: " + getClase() + "\n"
                 + "Aerolinea: " + getAerolinea() + "\n"
-                + "Boletos: " + getBoletos() + "\n"
-                + "Asientos: " + getAsientos());
+                + "Boletos: " + getBoletos());
     }
 }
+
     
     
     /*
